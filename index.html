@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MPP's projects</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+		}
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 20px 0px 20px;
+		}
+		.header button {
+			width: 160px;
+			background-color: #333;
+			font-weight: 600;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.header button:hover {
+			background-color: #555;
+			text-decoration: underline;
+		}
+		.content {
+			padding: 20px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		.section {
+			margin-bottom: 40px;
+			background-color: white;
+			padding: 5px 20px 20px 20px;
+			box-shadow: 0 3px 5px #00000042;
+			border-radius: 10px;
+		}
+		.intro {
+			color: #333;
+			margin-bottom: 8px;
+		}
+		.link {
+			color: #007bff;
+			text-decoration: none;
+		}
+		.link:hover {
+			color: #0096ff;
+			text-decoration: underline;
+		}
+		h1 {
+			color: #333;
+			margin-bottom: 20px;
+		}
+		h2 {
+			color: #333;
+			margin-bottom: 10px;
+		}
+		p {
+			color: #666;
+		}
+		video {
+			max-width: 100%;
+			border-radius: 10px;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<button id="bg" onclick="set_lang('en')">View in English</button>
+		<button id="en" onclick="set_lang('bg')">Виж на български</button>
+	</div>
+	<div class="content">
+		<p class="intro" id="en">On the internet, e.g. Github, I go by Mew Pur Pur. This is a set of my main personal projects and undertakings.</p>
+		<p class="intro" id="bg">В интернет, напр. Github, минавам с името Mew Pur Pur. Този сайт е компилация от личните ми проекти и начинания.</p>
+		<div style="padding-bottom: 16px"></div>
+		<div class="section">
+			<h1>Aeropelago</h1>
+			<p class="intro" id="en">A game project in early development.</p>
+			<p class="intro" id="bg">Игра в ранен етап на разработване.</p>
+			<p id="en">Embark on an thrilling journey through the sky archipelago! Traverse through hundreds of hand-made stages and learn about the secrets of the isles in this super tight platformer - or build your own adventure inside the level editor!</p>
+			<p id="bg">Тръгни на вълнуващо приключение през небесният архипелаг! Пътувай през стотици ръчно направени стаи и научи тайните на островите във този супер стегнат платформър - или създай свое собствено приключение в редактора на нива!</p>
+			<video controls>
+				<source src="assets/aeropelago_video.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="section">
+			<h1>GodSVG</h1>
+			<p class="intro" id="en">A SVG editor in very early development.</p>
+			<p class="intro" id="bg">Редактор на SVG файлове в много ранен етап на разработване.</p>
+			<p id="en">Unlike most SVG editors, which focus on powerful features for artists, GodSVG's target users are programmers looking to create optimized vector graphics. The app also aims to support mobile devices.</p>
+			<p id="bg">За разлика от повечето редактори на SVG файлове, които се фокусират върху мощни функции за артисти, GodSVG е насочен към програмисти, които целят да създават оптимизирани векторни графики. Приложението също цели да поддържа мобилни устройства.</p>
+			<img style="max-width: 750px" src="assets/godsvg_image.png" alt="GodSVG Editor">
+			<p id="en">GodSVG is, and always will be, free and open source. Check out the <a href="https://github.com/MewPurPur/GodSVG" class="link">GodSVG repository</a>.</p>
+			<p id="bg">GodSVG е, и винаги ще бъде, безплатен и с отворен код. Разгледайте в <a href="https://github.com/MewPurPur/GodSVG" class="link">репозиторията на GodSVG</a>.</p>
+		</div>
+		<div class="section">
+			<h1 id="en">Open-source contributions</h1>
+			<h1 id="bg">Приноси към отворен код</h1>
+			<p class="intro" id="en">I have made a number of meaningful contributions to Godot Engine. Below are the ones I am most proud of:</p>
+			<p class="intro" id="bg">Направил съм няколко значителни приноса към Godot Engine. Отдолу са тези, от които съм най-горд:</p>
+			<h2 id="en">Overhauling the Curve and Gradient Editors</h2>
+			<h2 id="bg">Преработка на редакторите на Curve и Gradient</h2>
+			<p id="en">I reworked Godot's Curve and Gradient editors to significantly improve their usability in pull requests <a href="https://github.com/godotengine/godot/pull/74959" class="link">#74959</a> and <a href="https://github.com/godotengine/godot/pull/71915" class="link">#71915</a>.</p>
+			<p id="bg">Преработих редакторите на ресурсите Curve и Gradient за да подобря значително колко удобно може да се използват в PRs <a href="https://github.com/godotengine/godot/pull/74959" class="link">#74959</a> и <a href="https://github.com/godotengine/godot/pull/71915" class="link">#71915</a>.</p>
+			<video controls>
+				<source src="assets/contribution1.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<img src="assets/contribution2.png" alt="Contribution 2">
+			<h2 id="en">SVG icons and optimizations</h2>
+			<h2 id="bg">SVG иконки и оптимизации.</h2>
+			<p id="en">I have created dozens of icons for Godot, some of my more prominent examples being pull requests <a href="https://github.com/godotengine/godot/pull/77376" class="link">#77376</a> and <a href="https://github.com/godotengine/godot/pull/78903" class="link">#78903</a>. I also went through all SVG files used by the engine, manually optimizing and fixixng them up, reducing the total file size by more than half - even though the SVGs had been optimized in advance.</p>
+			<p id="bg">Създал съм десетки иконки за Godot, някои от най-значителните примери са PRs <a href="https://github.com/godotengine/godot/pull/77376" class="link">#77376</a> и <a href="https://github.com/godotengine/godot/pull/78903" class="link">#78903</a>. Освен това, аз оптимизирах и поправих SVG файловете използвани от Godot дотолкова, че намалих общият им размер наполовина - въпреки че те вече бяха оптимизирани предварително.</p>
+			<img src="assets/contribution3.png" alt="Contribution 3">
+		</div>
+	</div>
+</body>
+
+<script>
+	const languages = ["en", "bg"];
+	const stuff = new Map();
+	stuff.set("en", document.querySelectorAll("#en"));
+	stuff.set("bg", document.querySelectorAll("#bg"));
+    
+	var lang = "en";
+	set_lang("en");
+    
+	function set_lang(new_lang) {
+		var new_lang_stuff = stuff.get(new_lang);
+		for (let i = 0; i < new_lang_stuff.length; i++) {
+			new_lang_stuff[i].style.display = "block";
+		}
+		for (let i = 0; i < languages.length; i++) {
+			if (languages[i] != new_lang) {
+				var old_lang_stuff = stuff.get(languages[i]);
+				for (let j = 0; j < old_lang_stuff.length; j++) {
+					old_lang_stuff[j].style.display = "none";
+				}
+			}
+		}
+	}
+</script>
+
+</html>

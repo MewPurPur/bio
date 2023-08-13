@@ -11,7 +11,8 @@
 			justify-content: center;
 			align-items: center;
 			height: 100vh;
-			overflow: hidden;
+			overflow-x: scroll;
+			overflow-y: hidden;
 			font-family: Arial, sans-serif;
 			background-color: #ffe5e5;
 			transition: background-color 0.5s;
@@ -204,9 +205,9 @@
 			<p class="intro" id="bg">Направил съм няколко значителни приноса към кода на Godot Engine. Отдолу съм изброил тези, от които съм най-горд:</p>
 			<div class="sub-section">
 				<h3 id="en">Overhauling the Curve and Gradient Editors</h3>
-				<p id="en">I reworked Godot's Curve and Gradient editors to significantly improve their usability and appearance in pull requests <a href="https://github.com/godotengine/godot/pull/74959" class="link">#74959</a> and <a href="https://github.com/godotengine/godot/pull/71915" class="link">#71915</a>.</p>
+				<p id="en">I reworked Godot's Curve and Gradient editors to significantly improve their usability and appearance in pull requests <a href="https://github.com/godotengine/godot/pull/74959" class="link">#74959</a> and <a href="https://github.com/godotengine/godot/pull/71915" class="link">#71915</a>. I've heard a lot of feedback from users who loved these changes.</p>
 				<h3 id="bg">Преработка на редакторите на Curve и Gradient</h3>
-				<p id="bg">Преработих редакторите на ресурсите Curve и Gradient за да подобря значително как изглеждат и колко удобно може да се използват в PRs <a href="https://github.com/godotengine/godot/pull/74959" class="link">#74959</a> и <a href="https://github.com/godotengine/godot/pull/71915" class="link">#71915</a>.</p>
+				<p id="bg">Преработих редакторите на ресурсите Curve и Gradient за да подобря значително как изглеждат и колко удобно може да се използват в PRs <a href="https://github.com/godotengine/godot/pull/74959" class="link">#74959</a> и <a href="https://github.com/godotengine/godot/pull/71915" class="link">#71915</a>. Получих много отзиви от потребители, които харесаха тези промени.</p>
 				<video width="400" height="300" controls>
 					<source src="assets/contribution1.mp4" type="video/mp4">
 					Your browser does not support the video tag.
@@ -247,14 +248,16 @@
 		}
 	}
 	
+	switchSection(0);
+	
 	const languages = ["en", "bg"];
 	const stuff = new Map();
 	stuff.set("en", document.querySelectorAll("#en"));
 	stuff.set("bg", document.querySelectorAll("#bg"));
-	 
+	
 	var lang = "en";
 	set_lang("en");
-	 
+	
 	function set_lang(new_lang) {
 		var new_lang_stuff = stuff.get(new_lang);
 		for (let i = 0; i < new_lang_stuff.length; i++) {
@@ -269,7 +272,6 @@
 			}
 		}
 	}
-	switchSection(0);
 </script>
 
 </html>

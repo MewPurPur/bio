@@ -9,87 +9,57 @@
 			margin: 0;
 			display: flex;
 			justify-content: center;
-			align-items: center;
-			height: 100vh;
-			overflow-x: scroll;
-			overflow-y: hidden;
+			align-items: flex-start;
+			min-height: 100vh;
+			padding: 20px 0;
 			font-family: Arial, sans-serif;
-			background-color: #ffe5e5;
-			transition: background-color 0.5s;
+			background: linear-gradient(180deg, #ffe5e5 0%, #e5f0ff 33%, #cce6ff 66%, #99c2ff 100%);
+			background-attachment: fixed;
 		}
 		.container {
-			width: 58%;
-			min-width: 420px;
-			height: 82%;
-			overflow-y: scroll;
+			width: max(90%, 440px);
+			max-width: 880px;
 			border: 2px solid #333;
 			padding: 0;
 			box-sizing: border-box;
 			background-color: #fff;
 			border-radius: 10px;
 			box-shadow: 0px 0px 10px #00000042;
+			margin-bottom: 40px;
+		}
+		.header {
+			background-color: #222;
+			color: white;
+			text-align: center;
+			padding: 20px;
+			border-radius: 8px 8px 0 0;
+			position: relative;
+		}
+		.header h1 {
+			margin: 0;
+			font-size: 28px;
 		}
 		.section {
-			display: none;
+			padding: 30px;
+			border-bottom: 2px solid #eee;
 			text-align: justify;
-			padding: 20px;
-			border-radius: 0 0 10px 10px;
+		}
+		.section:last-child {
+			border-bottom: none;
+			border-radius: 0 0 8px 8px;
 		}
 		.sub-section {
 			margin-top: 30px;
 		}
-		.active {
-			display: block;
-		}
-		.tab-bar-wrapper {
-			position: sticky;
-			top: 0;
-			z-index: 1;
-		}
-		.tab-bar {
-			display: flex;
-			justify-content: space-between;
-			align-items: stretch;
-			background-color: #222;
-			overflow: hidden;
-			height: 50px;
-		}
-		.tab {
-			flex: 1;
-			padding: 10px 0;
-			background-color: #333;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			text-align: center;
-			font-size: 15px;
-			font-weight: bold;
-			text-decoration: none;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
-		}
-		.tab:hover {
-			background-color: #444;
-			text-decoration: underline;
-		}
-		.tab p {
-			font-size: 15px;
-		}
-		.selected {
-			background-color: #444;
-			pointer-events: none;
-			cursor: default;
-		}
 		.intro {
 			font-weight: bold;
 			color: #222;
+			font-size: 18px;
 		}
 		.language-button {
 			width: 160px;
 			position: absolute;
-			top: 10px;
+			top: 15px;
 			right: 15px;
 			padding: 10px 16px;
 			background-color: #444;
@@ -106,14 +76,13 @@
 			background-color: #555;
 		}
 		.footer {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
 			text-align: center;
-			padding: 10px;
-			font-size: 12px;
-			color: #777;
+			padding: 20px;
+			font-size: 14px;
+			color: #666;
+			background-color: #f8f8f8;
+			border-radius: 0 0 8px 8px;
+			margin-top: 0;
 		}
 		.link {
 			color: #007bff;
@@ -123,103 +92,96 @@
 			color: #00a4ff;
 			text-decoration: underline;
 		}
-		h1 {
-			font-size: 24px;
-			margin-bottom: 10px;
+		.section-title {
+			font-size: 32px;
+			margin-bottom: 15px;
+			color: #222;
+			border-bottom: 3px solid #007bff;
+			padding-bottom: 10px;
 		}
 		h3 {
-			font-size: 18px;
-			margin-top: 15px;
-			margin-bottom: 5px;
+			font-size: 20px;
+			margin-top: 25px;
+			margin-bottom: 10px;
+			color: #333;
 		}
 		p {
 			font-size: 16px;
 			line-height: 1.6;
+			margin-bottom: 15px;
+		}
+		ul {
+			font-size: 16px;
+			line-height: 1.6;
+			margin-bottom: 15px;
+		}
+		li {
+			margin-bottom: 8px;
 		}
 		img {
 			max-width: 100%;
 			height: auto;
-			margin: 10px 0;
-			border-radius: 5px;
+			margin: 20px 0;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 		}
 		video {
 			max-width: 100%;
 			height: auto;
-			margin: 10px 0;
-			border-radius: 5px;
+			margin: 20px 0;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		}
+		.intro-section {
+			background: linear-gradient(135deg, #ffe5e5, #fff0f0);
+		}
+		.godsvg-section {
+			background: linear-gradient(135deg, #e5f0ff, #f0f8ff);
+		}
+		.contributions-section {
+			background: linear-gradient(135deg, #cce6ff, #e6f3ff);
+		}
+		.aeropelago-section {
+			background: linear-gradient(135deg, #99c2ff, #d9e8ff);
 		}
 	</style>
 </head>
 
 <body>
-<button class="language-button" id="bg" onclick="setLang('en')">View in English</button>
-<button class="language-button" id="en" onclick="setLang('bg')">Виж на български</button>
 <div class="container">
-	<div class="tab-bar-wrapper">
-		<div class="tab-bar">
-			<button class="tab" onclick="switchSection(0)"><p id="en">Introduction</p><p id="bg">Въведение</p></button>
-			<button class="tab" onclick="switchSection(1)">Aeropelago</button>
-			<button class="tab" onclick="switchSection(2)">GodSVG</button>
-			<button class="tab" onclick="switchSection(3)"><p id="en">Open-source contributions</p><p id="bg">Приноси към отворен код</p></button>
-		</div>
+	<div class="header">
+		<button class="language-button" id="bg" onclick="setLang('en')">View in English</button>
+		<button class="language-button" id="en" onclick="setLang('bg')">Виж на български</button>
+		<h1 id="en">Espe's Portfolio</h1>
+		<h1 id="bg">Портфолио на Espe</h1>
 	</div>
 
-	<div class="section" id="introduction">
+	<div class="section intro-section">
 		<h1 id="en">Ohai!</h1>
-		<p class="intro" id="en">In this website I showcase my personal projects and undertakings, sort of like a portfolio.</p>
+		<p class="intro" id="en">In this website I showcase my personal projects and undertakings, like a portfolio.</p>
 		<p id="en">I'm a programmer from Bulgaria, known on the internet (e.g. Github) as Mew Pur Pur or Espe, and my projects are attributed to this name.</p>
 		<p id="en">During my high school years, I was a mathematician who competed internationally and represented my country. I went to a German university to study math, but as I got interested in a few technologies, mainly Godot Engine, I decided to pursue Computer Science instead. In the end, I majored in Computer Science and minored in Mathematics.</p>
 		<h1 id="bg">Здравей!</h1>
-		<p class="intro" id="bg">В този уебсайт представям личните си проекти и начинания, нещо като портфолио.</p>
+		<p class="intro" id="bg">В този уебсайт представям личните си проекти и начинания, като портфолио.</p>
 		<p id="bg">Аз съм програмист от България, в интернет (напр. Github) минавам с псевдонима "Mew Pur Pur" или "Espe", затова проектите ми са приписани на това име.</p>
 		<p id="bg">В гимназията бях математик, състезаващ се международно и представящ страната. Отидох в немски университет да уча математика, но там започнах да се занимавам с няколко технологии, основно Godot Engine, което ме мотивира да се насоча вместо това към компютърните науки. В края на краищата, аз взех Компютърни науки като основна степен и Математика като втора степен.</p>
 	</div>
-	
-	<div class="section" id="aeropelago">
-		<h1>Aeropelago</h1>
-		<p class="intro" id="en">A game project in early development.</p>
-		<p id="en">The game already has its basic set of fundamental systems:</p>
-		<ul id="en">
-			<li>Dynamic save slots</li>
-			<li>Functioning menus and settings</li>
-			<li>A level editor</li>
-			<li>Super packed controls</li>
-		</ul>
-		<p id="en">The pitch is as follows:</p>
-		<p id="en">Embark on an thrilling journey through the sky archipelago! Traverse through hundreds of hand-made stages and learn about the secrets of the isles in this super tight platformer - or build your own adventure inside the level editor!</p>
-		<p class="intro" id="bg">Игра в ранен етап на разработване.</p>
-		<p id="bg">Играта вече разполага с повечето основни системи:</p>
-		<ul id="bg">
-			<li>Динамични сейфове</li>
-			<li>Работещи менюта и настройки</li>
-			<li>Редактор на нива</li>
-			<li>Супер стегнати контроли</li>
-		</ul>
-		<p id="bg">Рекламата е както следва:</p>
-		<p id="bg">Тръгни на вълнуващо приключение през небесният архипелаг! Пътувай през стотици ръчно направени стаи и научи тайните на островите във този супер стегнат платформър - или създай свое собствено приключение в редактора на нива!</p>
-		<video controls>
-			<source src="assets/aeropelago.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<p id="en">The above footage is a demonstration of the level editor, not a trailer. The game is far too early in development for a trailer.</p>
-		<p id="bg">Видеото отгоре е просто демонстрация на редактора на нива, а не трейлър. Играта е в твърде ранен етап за трейлър.</p>
-	</div>
-	
-	<div class="section" id="godsvg">
-		<h1>GodSVG</h1>
-		<p class="intro" id="en">A SVG editor in pre-alpha.</p>
-		<p id="en">Unlike most SVG editors, which focus on powerful features for artists, GodSVG's target users are programmers looking to create optimized vector graphics. The app also aims to support mobile devices.</p>
-		<p class="intro" id="bg">Редактор на SVG файлове в ранен етап на разработване.</p>
+
+	<div class="section godsvg-section">
+		<h1 class="section-title">GodSVG</h1>
+		<p class="intro" id="en">An open-source SVG editor in late alpha.</p>
+		<p id="en">Unlike most SVG editors, which focus on powerful features for artists, GodSVG's target users are programmers looking to create optimized vector graphics. It's described in-depth in the <a href="https://godsvg.com">GodSVG Website</a> I've made.</p>
+		<p class="intro" id="bg">Редактор на SVG файлове в алфа версия.</p>
 		<p id="bg">За разлика от повечето редактори на SVG файлове, които се фокусират върху мощни функции за артисти, GodSVG е насочен към програмисти, които целят да създават оптимизирани векторни графики. Приложението също цели да поддържа мобилни устройства.</p>
 		<img src="assets/godsvg.png" alt="GodSVG SVG Editor">
 		<p id="en">GodSVG is, and always will be, free and open source. Check out the <a href="https://github.com/MewPurPur/GodSVG" class="link">GodSVG repository</a>.</p>
 		<p id="bg">GodSVG е, и винаги ще бъде, безплатен и с отворен код. Разгледайте в <a href="https://github.com/MewPurPur/GodSVG" class="link">репозиторията на GodSVG</a>.</p>
 	</div>
 	
-	<div class="section" id="contributions">
-		<h1 id="en">Open-source contributions</h1>
+	<div class="section contributions-section">
+		<h1 class="section-title" id="en">Open-source contributions</h1>
 		<p class="intro" id="en">I have made a number of meaningful contributions to Godot Engine's codebase. Below I've listed the most major ones:</p>
-		<h1 id="bg">Приноси към отворен код</h1>
+		<h1 class="section-title" id="bg">Приноси към отворен код</h1>
 		<p class="intro" id="bg">Направил съм няколко значителни приноса към кода на Godot Engine. Отдолу съм изброил тези най-големите:</p>
 		<div class="sub-section">
 			<h3 id="en">Overhauling the Curve and Gradient Editors</h3>
@@ -247,34 +209,39 @@
 			<img src="assets/contribution4.png" alt="Contribution 4">
 		</div>
 	</div>
+
+	<div class="section aeropelago-section">
+		<h1 class="section-title">Aeropelago</h1>
+		<p class="intro" id="en">A game project in early development.</p>
+		<p id="en">The game already has its basic set of fundamental systems:</p>
+		<ul id="en">
+			<li>Dynamic save slots</li>
+			<li>Functioning menus and settings</li>
+			<li>A level editor</li>
+			<li>Super packed controls</li>
+		</ul>
+		<p id="en">The pitch is as follows:</p>
+		<p id="en">Embark on an thrilling journey through the sky archipelago! Traverse through hundreds of hand-made stages and learn about the secrets of the isles in this super tight platformer - or build your own adventure inside the level editor!</p>
+		<p class="intro" id="bg">Игра в ранен етап на разработване.</p>
+		<p id="bg">Играта вече разполага с повечето основни системи:</p>
+		<ul id="bg">
+			<li>Динамични сейфове</li>
+			<li>Работещи менюта и настройки</li>
+			<li>Редактор на нива</li>
+			<li>Супер стегнати контроли</li>
+		</ul>
+		<p id="bg">Рекламата е както следва:</p>
+		<p id="bg">Тръгни на вълнуващо приключение през небесният архипелаг! Пътувай през стотици ръчно направени стаи и научи тайните на островите във този супер стегнат платформър - или създай свое собствено приключение в редактора на нива!</p>
+		<video controls>
+			<source src="assets/aeropelago.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<p id="en">The above footage is a demonstration of the level editor, not a trailer. The game is far too early in development for a trailer.</p>
+		<p id="bg">Видеото отгоре е просто демонстрация на редактора на нива, а не трейлър. Играта е в твърде ранен етап за трейлър.</p>
+	</div>
 </div>
-<div class="footer" id="en">Made with love by Espe</div>
-<div class="footer" id="bg">Направено с грижа от Espe</div>
-</body>
 
 <script>
-const sections = document.querySelectorAll('.section');
-const tabs = document.querySelectorAll('.tab');
-
-function switchSection(index) {
-	sections.forEach(section => section.classList.remove('active'));
-	tabs.forEach(tab => tab.classList.remove('selected'));
-	sections[index].classList.add('active');
-	tabs[index].classList.add('selected');
-	
-	if (index === 1) {
-		document.body.style.backgroundColor = '#e5f0ff';
-	} else if (index === 2) {
-		document.body.style.backgroundColor = '#cce6ff';
-	} else if (index === 3) {
-		document.body.style.backgroundColor = '#99c2ff';
-	} else {
-		document.body.style.backgroundColor = '#ffe5e5';
-	}
-}
-
-switchSection(0);
-
 const languages = ["en", "bg"];
 const stuff = new Map();
 stuff.set("en", document.querySelectorAll("#en"));
@@ -306,4 +273,5 @@ function clearSelection() {
 }
 </script>
 
+</body>
 </html>
